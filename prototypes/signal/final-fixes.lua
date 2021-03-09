@@ -20,6 +20,13 @@ if DECT.ENABLED["signals"] then
 		end
 	end
 
+	-- Change science pack type from "tool" to "item"
+	for _, mapped_color in pairs(mapped_colors) do
+		if mapped_color.type == "tool" then
+			mapped_color.type = "item"
+		end
+	end
+
 	-- Map colors to lamp entities
 	for _, lamp in pairs(data.raw.lamp) do
 		lamp.signal_to_color_mapping = mapped_colors
